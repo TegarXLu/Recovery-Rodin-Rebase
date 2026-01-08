@@ -197,5 +197,10 @@ TARGET_USES_MKE2FS := true
 TW_INCLUDE_FUSE_NTFS := true
 TW_INCLUDE_FUSE_EXFAT := true
 
+# init_boot ramdisk
+BOARD_VENDOR_RAMDISK_FRAGMENTS := init_boot
+BOARD_VENDOR_RAMDISK_FRAGMENT.init_boot.PREBUILT := $(DEVICE_PATH)/ramdisk.init_boot.lz4
+BOARD_VENDOR_RAMDISK_FRAGMENT.init_boot.MKBOOTIMG_ARGS := --ramdisk_type platform
+
 # Version
 TW_DEVICE_VERSION := udin-test
